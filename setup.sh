@@ -17,9 +17,9 @@ chmod +x /usr/local/bin/docker-compose
 ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 # setup the docker compose service definition
 mkdir /srv/docker
-curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/kbaynes/ubuntu-compose-simple/master/docker-compose.yml
+curl -o /srv/docker/docker-compose.yml https://raw.githubusercontent.com/kbaynes/simple-ec2-l2-compose/master/docker-compose.yml
 # setup systemd unit file to run compose app as a service
-curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/kbaynes/ubuntu-compose-simple/master/app.service
+curl -o /etc/systemd/system/docker-compose-app.service https://raw.githubusercontent.com/kbaynes/simple-ec2-l2-compose/master/app.service
 systemctl enable docker-compose-app
 # start up the application via docker-compose
 docker-compose -f /srv/docker/docker-compose.yml up -d

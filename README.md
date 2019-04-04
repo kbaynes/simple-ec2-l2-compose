@@ -12,11 +12,12 @@ To use this setup script on Amazon EC2:
 - Click Launch Instance and select the Linux 2 AMI instance (tested with 64-bit x86)
 - Select a type (tested with t2.micro: Variable ECUs, 1 vCPUs, 2.5 GHz, Intel Xeon Family, 1 GiB memory, EBS only)
 - Click Next: Configure Instance Details, expand the Advanced section at the bottom
+- Do not use 'Default DMZ' because it does not have any open ports. Create a Security Group in EC2 and open ports 80 and 22.
 - Enter the following Launch Script into the User Data input field
 - Click Review and Launch, then Launch
 
 ```
-curl -o ./setup.sh https://raw.githubusercontent.com/kbaynes/docker-compose-ec2-l2/master/setup.sh
+curl -o ./setup.sh https://raw.githubusercontent.com/kbaynes/simple-ec2-l2-compose/master/setup.sh
 chmod +x ./setup.sh
 ./setup.sh
 ```
