@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# sudo to root so we don't have to sudo every command
-sudo su
+# no need to sudo su, EC2 user-data scripts are run as root
 # update the image
 yum update -y
 # install docker
